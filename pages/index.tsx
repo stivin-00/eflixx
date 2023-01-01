@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import { Movie } from "../typings";
 import requests from "../utils/request";
 import Row from "../components/Row";
+import useAuth from "../hooks/useAuth";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -31,6 +32,16 @@ const Home = ({
   trendingNow,
 }: // products,
 Props) => {
+  const { logOut, loading } = useAuth();
+
+  if (loading)
+    return (
+      <div className="bg-black -z-80 flex w-screen h-screen items-center justify-center">
+        {" "}
+        <h1 className="text-[#860e0e]">Loading...</h1>
+      </div>
+    );
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h[140vh]">
       <Head>
