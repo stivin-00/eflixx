@@ -132,18 +132,18 @@ function Modal() {
     <MuiModal
       open={showModal}
       onClose={handleClose}
-      className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+      className="fixed !top-7 left-0 right-0 z-60 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
     >
-      <>
+      <div className="m-2 lg:mg-10 md:m-6 rounded-sm bg-[#181818]">
         <Toaster position="bottom-center" />
         <button
-          className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
+          className="modalButton absolute right-3 top-3 md:top-6 md:right-6 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
           onClick={handleClose}
         >
           <HiX className="h-6 w-6" />
         </button>
 
-        <div className="relative pt-[56.25%]">
+        <div className="relative pt-[56.25%] bg-[#181818]">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
@@ -192,7 +192,7 @@ function Modal() {
               </div>
             </div>
             <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row">
-              <p className="w-5/6">{movie?.overview}</p>
+              <p className="w-5/6">{movie?.overview.substring(0, 160)}...</p>
               <div className="flex flex-col space-y-3 text-sm">
                 <div>
                   <span className="text-[gray]">Genres:</span>{" "}
@@ -212,7 +212,7 @@ function Modal() {
             </div>
           </div>
         </div>
-      </>
+      </div>
     </MuiModal>
   );
 }
