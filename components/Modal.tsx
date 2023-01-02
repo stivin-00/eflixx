@@ -132,7 +132,7 @@ function Modal() {
     <MuiModal
       open={showModal}
       onClose={handleClose}
-      className="fixed !top-7 left-0 right-0 z-60 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+      className="fixed !top-7 bottom-0 left-0 right-0 z-60 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
     >
       <div className="m-2 lg:mg-10 md:m-6 rounded-sm bg-[#181818]">
         <Toaster position="bottom-center" />
